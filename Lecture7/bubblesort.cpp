@@ -41,9 +41,9 @@ int main(){
 	}
 	
 	}
-
+// n-->5
 		// a little bit optimized// 
-		for(int i=0;i<=n-2;i++){//1<=3
+		for(int i=0;i<=n-2;i++){//4<=3
 		
 		// for(int j=0;j<=n-2;j++){//5-2-0
 		for(int j=0;j<=n-2-i;j++){//3<=2
