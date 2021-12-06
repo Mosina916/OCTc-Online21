@@ -70,7 +70,7 @@ int main(){
 
 		}
 		else{
-			cout<<"old men"<<endl;
+		cout<<"very old men"<<endl;
 			
 
 		}
@@ -79,6 +79,10 @@ int main(){
 	else{
 		cout<<"young "<<endl;
 	}
+
+	age>=70?age==80?cout<<"very old men"<<endl:cout<<"very old men"<<endl:cout<<"young "<<endl;
+
+
 
 
 
