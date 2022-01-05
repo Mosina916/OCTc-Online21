@@ -12,7 +12,7 @@ void permutation(char inp[],int i){
 	for(int j=i;inp[j]!='\0';j++){
 		swap(inp[i],inp[j]);
 		permutation(inp,i+1);
-		swap(inp[i],inp[j]);
+		swap(inp[i],inp[j]);//backtracking
 
 
 	}
