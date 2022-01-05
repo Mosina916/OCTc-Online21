@@ -52,13 +52,14 @@ bool ratinamaze(char maze[20][20],int r,int c,int i,int j){
 
 	}
 
-	sol[i][j]=0;
+	sol[i][j]=0;//backtracking 
 	return false;
 
 
 
 }
 int main(){
+	// can be square or non square matrix
 	char maze[20][20]={
 		"OOOO",
 		"OOOX",
