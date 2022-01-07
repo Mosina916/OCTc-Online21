@@ -67,9 +67,9 @@ bool sudukosolver(int mat[9][9],int i,int j,int n){
 
 	// recursive case
 	if(j==n){
-		return sudukosolver(mat,i+1,0,n);
-		// i=i+1;//1
-		// j=0;//
+		// return sudukosolver(mat,i+1,0,n);
+		i=i+1;//1
+		j=0;//
 	}
 	if(mat[i][j]!=0){
 		return sudukosolver(mat,i,j+1,n);
