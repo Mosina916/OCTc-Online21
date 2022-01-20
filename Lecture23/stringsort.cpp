@@ -6,8 +6,6 @@ using namespace std;
 // fn(string *arr){
 // 	string s1=arr[0];
 // 	string s1=arr[1];
-
-
 // }
 // comparator
 bool mycompare(string s1,string s2){//cat cattle //apple bat.  bat apple   s1-->batman s2-->bat.  car car
