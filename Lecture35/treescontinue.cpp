@@ -1,4 +1,5 @@
 #include <iostream>
+#include<queue>
 using namespace std;
 class node{
 public:
@@ -171,41 +172,109 @@ Pair fastdiameter(node*root){
 
 
 }
+// class continue
+// 
+void printlevelwise(node*root){
+	// take a queue of type node*
+	queue<node*>q;
+	// push root node
+	q.push(root);
+	// push NULL
+	q.push(NULL);
+	// loop
+	while(!q.empty()){
+		node*x=q.front();//NULL
+	q.pop();
+	// if(x is NULL)
+	if(x==NULL){
+		cout<<endl;
+		if(!q.empty()){
+			q.push(NULL);
+
+		}
+	}
+	// if x is not NULL
+	else{
+		cout<<x->data<<" "; //8
+		if(x->left!=NULL){
+			// left child exist karta hai
+			q.push(x->left);
+		}
+		if(x->right!=NULL){
+			// left child exist karta hai
+			q.push(x->right);
+		}
+
+
+	}
+
+	}
+
+}
+
+
+node* buildtreelevelwise(){
+	node*root=NULL;
+	int data;
+	cin>>data;//-1
+	if(data==-1){
+		return NULL;
+	}
+
+
+	root=new node(data);
+	queue<node*>q;
+	q.push(root);
+
+// loop
+	while(!q.empty()){
+		node*x=q.front();//13
+		q.pop();
+		cout<<"enter childrent of "<<x->data<<endl;
+		int lc,rc;
+		cin>>lc>>rc;//-1 -1 
+		if(lc!=-1){
+			x->left=new node(lc);
+			q.push(x->left);
+
+
+		}
+		if(rc!=-1){
+			x->right=new node(rc);
+			q.push(x->right);
+
+
+		}
+
+
+
+	}
+	return root;
+	
+
+
+
+
+}
+
+
+
+
 int main(){
 
 	// node x;
 
 	node*root=buildtree();
 
-	cout<<"preorderprint is : ";
+
 	preorderprint(root);
 
 	cout<<endl;
-
-	cout<<"Inorderprint is : ";
 	Inorderprint(root);
 
-	cout<<endl;
+	// node*root=buildtreelevelwise();
 
-	cout<<"postorderprint is : ";
-	postorderprint(root);
-
-	cout<<endl;
-
-
-	cout<<"count of nodes is "<<countnodes(root)<<endl;
-
-	cout<<"height of tree is "<<height(root)<<endl;
-
-	cout<<"sum  of nodes of a tree is "<<sumofnodes(root)<<endl;
-
-	cout<<"diameter of tree is "<<diameter(root)<<endl;
-
-	Pair x=fastdiameter(root);
-	cout<<"diameter of tree is "<<x.dia<<endl;
-	cout<<"height of tree is "<<x.height<<endl;
-
-
+	// printlevelwise(root);
 
 	delete root;
 	root=NULL;
