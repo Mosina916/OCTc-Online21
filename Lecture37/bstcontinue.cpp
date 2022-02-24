@@ -227,10 +227,6 @@ Pair isheightbalanedornot(node*root){
 		// p.isbalanced=true;
 		return p;
 	}
-
-
-
-
 	// recursive case
 	Pair l=isheightbalanedornot(root->left);
 	Pair r=isheightbalanedornot(root->right);
@@ -242,14 +238,81 @@ Pair isheightbalanedornot(node*root){
 		p.isbalanced=false;
 
 	}
-
-	return p;
-	
-
+		return p;
 
 }
 // 8 3 10 1 6 14 4 7 13 -1
+class Linkedlist{
+public:
+	node*head;
+	node*tail;
+	Linkedlist(){
+		head=NULL;
+		tail=NULL;
+	}
+};
+Linkedlist bsttoll(node*root){
+	Linkedlist l;
+	// base case
+	if(root==NULL){
+		// l.head=NULL;
+		// l.tail=NULL;
+		return l;
+	}
 
+
+
+	// recursive case
+	// case 1 is no child
+	if(root->left==NULL&&root->right==NULL){
+		l.head=root;
+		l.tail=root;
+		// return l;
+
+	}
+	// case 2 :lst exist
+	else if(root->left!=NULL&&root->right==NULL){
+		Linkedlist x=bsttoll(root->left);
+		x.tail->right=root;
+		l.head=x.head;
+		l.tail=root;
+		// return l;
+	}
+
+	// case 3 :rst exist
+	else if(root->left==NULL&&root->right!=NULL){
+		Linkedlist y=bsttoll(root->right);
+		root->right=y.head;
+		l.head=root;
+		l.tail=y.tail;
+		// return l;
+
+	}
+	// case 4
+	// lst exist rst exist
+	else{
+		Linkedlist x=bsttoll(root->left);//4
+		Linkedlist y=bsttoll(root->right);//7
+		x.tail->right=root;
+		root->right=y.head;
+		l.head=x.head;
+		l.tail=y.tail;
+		// return l;
+
+	}
+	return l;
+
+
+}
+
+void printll(node*head){
+	while(head!=NULL){
+		cout<<head->data<<" ";//1 3
+		head=head->right;
+	}
+
+	cout<<endl;
+}
 int main(){
 
 	// node x;
@@ -275,6 +338,11 @@ int main(){
 	 	cout<<"Not height balanced tree"<<endl;
 
 	 }
+
+	 Linkedlist l= bsttoll(root);
+
+
+	 printll(l.head);
 
 
 	delete root;
