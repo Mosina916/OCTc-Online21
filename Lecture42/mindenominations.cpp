@@ -13,8 +13,6 @@ int mincoinsneededtomaketheamount(int*coins,int n,int amount){
 		int chotans=mincoinsneededtomaketheamount(coins,n,chotaamount);//5
 		if(chotans!=INT_MAX&&chotans<ans){
 			ans=chotans;//2
-
-
 		}
 
 
@@ -96,8 +94,8 @@ int main(){
 	int amount;
 	cin>>amount;//15
 
-	cout<<"simple recursion : "<<mincoinsneededtomaketheamount(coins,n,amount)<<endl;
-	// int arr[100];
+	// cout<<"simple recursion : "<<mincoinsneededtomaketheamount(coins,n,amount)<<endl;
+	// // int arr[100];
 	int *arr=new int[amount+1];
 	for(int i=0;i<=amount;i++){
 		arr[i]=-1;
